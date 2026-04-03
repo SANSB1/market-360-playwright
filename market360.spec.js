@@ -4,21 +4,21 @@ const baseURL = 'https://market-360-frontend-zeta.vercel.app/';
 
 test.describe('Market 360 Website Tests', () => {
 
-  // ✅ Test Case 1: Home Page Loads
+  // Test Case 1: Home Page Loads
   test('Home Page should load', async ({ page }) => {
     await page.goto(baseURL);
     await expect(page).toHaveTitle(/Market360/i); 
     await expect(page.locator('text=Shop Now')).toBeVisible();
   });
 
-  // ✅ Test Case 2: Shop Now Navigation
+  // Test Case 2: Shop Now Navigation
   test('Click on Shop Now button', async ({ page }) => {
     await page.goto(baseURL);
     await page.click('text=Shop Now');  // Navigates to shop page
     await expect(page).toHaveURL(/auth/);
   });
 
-  // ✅ Test Case 3: Sign Up with Valid Email & Password
+  // Test Case 3: Sign Up with Valid Email & Password
   test('Sign Up functionality', async ({ page }) => {
   await page.goto(baseURL + 'auth');  // Navigate to Sign Up page
 
